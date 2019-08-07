@@ -141,7 +141,9 @@ module CarrierWave
         end
 
         def sign_url?(options)
-          @uploader.auto_sign_urls && !options[:skip_signing] && access_level == 'private'
+          # @uploader.auto_sign_urls && !options[:skip_signing] && access_level == 'private'
+          # Making return true everytime because it make request to azure server to check if auto_sign_urls enable or not
+          true
         end
 
         def blob
